@@ -52,7 +52,7 @@ echo($form_subject);
 echo($message);
 echo($headers);
 
-if ( mail($admin_email, adopt($form_subject), $message, $headers)) {
+if ( mail("testwebkpi@ukr.net", adopt($form_subject), $message, $headers)) {
     echo("Email successfully sent to $admin_email...");
 } else {
     echo("Email sending failed...");
