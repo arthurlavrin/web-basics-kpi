@@ -45,14 +45,16 @@ function adopt($text) {
 }
 
 $headers = "MIME-Version: 1.0" . PHP_EOL .
-"Content-Type: text/html; charset=utf-8" . PHP_EOL;
+"Content-Type: text/html; charset=utf-8" . PHP_EOL .
+'From: '.adopt($project_name).' <'.$admin_email.'>' . PHP_EOL .
+'Reply-To: '.$admin_email.'' . PHP_EOL;
 
 echo($admin_email);
 echo($form_subject);
 echo($message);
 echo($headers);
 
-if ( mail("testwebkpi@ukr.net", adopt($form_subject), $message, $headers)) {
+if ( mail($admin_email, adopt($form_subject), $message, $headers)) {
     echo("Email successfully sent to $admin_email...");
 } else {
     echo("Email sending failed...");
