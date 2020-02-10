@@ -44,8 +44,8 @@ function adopt($text) {
 	return '=?UTF-8?B?'.Base64_encode($text).'?=';
 }
 
-$headers[] = 'MIME-Version: 1.0';
-$headers[] = 'Content-type: text/html; charset=iso-8859-1';
+$headers = "MIME-Version: 1.0" . PHP_EOL .
+"Content-Type: text/html; charset=utf-8" . PHP_EOL;
 
 echo($admin_email);
 echo($form_subject);
