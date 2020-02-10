@@ -47,6 +47,11 @@ function adopt($text) {
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
+echo($admin_email);
+echo($form_subject);
+echo($message);
+echo($headers);
+
 if ( mail($admin_email, adopt($form_subject), $message, $headers)) {
     echo("Email successfully sent to $admin_email...");
 } else {
